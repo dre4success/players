@@ -1,4 +1,4 @@
-package main
+package poker
 
 import (
 	"encoding/json"
@@ -57,7 +57,6 @@ func (p *PlayerServer) leagueHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-type", jsonContentType)
 	json.NewEncoder(w).Encode(p.store.GetLeague())
 }
-
 
 func (p *PlayerServer) playersHandler(w http.ResponseWriter, r *http.Request) {
 	player := strings.TrimPrefix(r.URL.Path, "/players/")

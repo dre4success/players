@@ -1,4 +1,4 @@
-package main
+package poker
 
 import (
 	"context"
@@ -47,7 +47,7 @@ func (i *InMemoryPlayerStore) GetLeague() []Player {
 	}
 	return league
 }
-
+ 
 func (i *InMemoryPlayerStore) GetValue(name string) int {
 	result, err := i.client.HGet(ctx, table, name).Result()
 	log.Println(result)
